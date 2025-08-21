@@ -10,7 +10,7 @@ log_message "Installation started for hypr section"
 print_info "\nStarting hypr setup..."
 print_info "\nEverything is recommended to INSTALL"
 
-run_command "pacman -S --noconfirm hyprland" "Install Hyprland (Must)" "yes"
+run_command "pacman -S --noconfirm hyprland hyprpicker hypridle hyprlock" "Install Hyprland (Must)" "yes"
 run_command "mkdir -p /home/$SUDO_USER/.config/ && cp -r $BASE_DIR/configs/hypr /home/$SUDO_USER/.config/ && chown -R $SUDO_USER:$SUDO_USER /home/$SUDO_USER/.config/hypr" "Copy entire hypr config folder (Must)" "yes" "no" 
 
 run_command "pacman -S --noconfirm uwsm" "Install the Universal Window Session Manager (Must)" "yes"
