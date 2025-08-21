@@ -15,13 +15,13 @@ run_command "pacman -S --noconfirm qt5ct qt6ct kvantum" "Install Qt5, Qt6 Settin
 
 run_command "mkdir -p /home/$SUDO_USER/.themes && unzip -o $BASE_DIR/assets/themes/Catppuccin-Dark-BL-MB.zip -d /home/$SUDO_USER/.themes && chown -R $SUDO_USER:$SUDO_USER /home/$SUDO_USER/.themes" "Install Catppuccin Dark BL MB GTK theme" "yes" "no"
 
-run_command "tar -xvf $BASE_DIR/assets/icons/Tela-circle-dracula.tar.xz -C /usr/share/icons/" "Install Tela Circle Dracula icon theme" "yes"
+run_command "mkdir -p /home/$SUDO_USER/.icons && tar -xvf $BASE_DIR/assets/icons/Tela-circle-dracula.tar.xz -C /home/$SUDO_USER/.icons && chown -R $SUDO_USER:$SUDO_USER /home/$SUDO_USER/.icons" "Install Tela Circle Dracula icon theme in user .icons folder" "yes" "no"
 
 run_command "yay -S --sudoloop --noconfirm kvantum-theme-catppuccin-git" "Install Catppuccin theme for Kvantum" "yes" "no"
 
 run_command "cp -r $BASE_DIR/configs/kitty /home/$SUDO_USER/.config/ && chown -R $SUDO_USER:$SUDO_USER /home/$SUDO_USER/.config/kitty" "Copy Kitty config folder (Catppuccin theme)" "yes" "no"
 
-run_command "cp -r $BASE_DIR/assets/wallpapers /home/$SUDO_USER/ && chown -R $SUDO_USER:$SUDO_USER /home/$SUDO_USER/wallpapers" "Copy wallpapers and set default background" "yes" "no"
+run_command "mkdir -p /home/$SUDO_USER/Pictures/Wallpapers && cp -r $BASE_DIR/assets/wallpapers/* /home/$SUDO_USER/Pictures/Wallpapers/ && chown -R $SUDO_USER:$SUDO_USER /home/$SUDO_USER/Pictures/Wallpapers" "Copy wallpapers to ~/Pictures/Wallpapers" "yes" "no"
 
 
 # Add instructions to configure theming
