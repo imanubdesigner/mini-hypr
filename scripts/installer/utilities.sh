@@ -22,21 +22,11 @@ run_command "pacman -S --noconfirm cliphist" "Install Cliphist - Clipboard Manag
 
 # SWWW
 run_command "yay -S --sudoloop --noconfirm swww" "Install SWWW for wallpaper management" "yes" "no"
-run_command "sudo -u $SUDO_USER swww-daemon & disown" "Start swww daemon" "yes" "no"
-
-# Hyprpicker
-run_command "pacman -S --noconfirm hyprpicker" "Install Hyprpicker - Color Picker" "yes" "no"
-
-# Hyprlock
-run_command "pacman -S --noconfirm hyprlock" "Install Hyprlock - Screen Locker (Must)" "yes" "no"
 
 # Grimblast
 run_command "yay -S --sudoloop --noconfirm grimblast" "Install Grimblast - Screenshot tool" "yes" "no"
 
 # Waypaper
 run_command "yay -S --sudoloop --noconfirm waypaper" "Install Waypaper - Wallpaper tool" "yes" "no"
-
-# Hypridle
-run_command "pacman -S --noconfirm hypridle" "Install Hypridle for idle management (Must)" "yes" "no"
 
 echo "------------------------------------------------------------------------"
