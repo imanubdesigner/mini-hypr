@@ -19,11 +19,13 @@ elif run_command "pacman -S --noconfirm --needed git base-devel" "Install YAY (M
 fi
 run_command "pacman -S --noconfirm linux-headers nvidia-open-dkms nvidia-utils libva libva-utils libva-nvidia-driver egl-wayland" "Install Nvidia Open DKMS" "yes"
 
-run_command "pacman -S --noconfirm pipewire pipewire-audio pipewire-alsa pipewire-jack wireplumber pamixer" "Configuring audio (Recommended)" "yes" 
+run_command "pacman -S --noconfirm pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack alsa-utils alsa-plugins" "Configuring audio (Recommended)" "yes" 
 
-run_command "pacman -S --noconfirm ttf-cascadia-code-nerd ttf-cascadia-mono-nerd ttf-fira-code ttf-fira-mono ttf-fira-sans ttf-firacode-nerd ttf-iosevka-nerd ttf-iosevkaterm-nerd noto-fonts-emoji ttf-jetbrains-mono-nerd ttf-jetbrains-mono ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono" "Installing Nerd Fonts and Symbols (Recommended)" "yes" 
+run_command "pacman -S --noconfirm ttf-nerd-fonts-symbols-mono ttf-nerd-fonts-symbols noto-fonts ttf-jetbrains-mono-nerd ttf-jetbrains-mono ttf-fira-code ttf-droid ttf-iosevkaterm-nerd noto-fonts-emoji otf-font-awesome adobe-source-code-pro-fonts" "Installing Nerd Fonts and Symbols (Recommended)" "yes" 
 
 run_command "pacman -S --noconfirm firefox" "Install nano" "yes"
+
+run_command "pacman -S --noconfirm neovim" "Install neovim" "yes"
 
 run_command "pacman -S --noconfirm sddm && systemctl enable sddm.service" "Install and enable SDDM (Recommended)" "yes"
 
@@ -39,10 +41,9 @@ run_command "pacman -S --noconfirm kitty" "Install Kitty (Recommended)" "yes"
 
 run_command "pacman -S --noconfirm nano" "Install nano" "yes"
 
-run_command "pacman -S --noconfirm neovim" "Install nano" "yes"
-
 # Launchers and application menus
-run_command "pacman -S --noconfirm wofi rofi" "Install application launchers (wofi, rofi)" "yes"
+run_command "pacman -S --noconfirm wofi rofi" "Install application launchers (wofi need only for changing wallpaper with swww script, rofi)" "yes"
+run_command "cp -r $BASE_DIR/configs/rofi /home/$SUDO_USER/.config/ && chown -R $SUDO_USER:$SUDO_USER /home/$SUDO_USER/.config/rofi" "Copy entire Rofi config folder (Must)" "yes" "no"
 
 # File manager and file utilities
 run_command "pacman -S --noconfirm thunar gvfs thunar-archive-plugin file-roller" "Install file manager and archive tools (Thunar, GVFS, File Roller)" "yes"
