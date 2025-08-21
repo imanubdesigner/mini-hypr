@@ -23,6 +23,8 @@ run_command "pacman -S --noconfirm pipewire pipewire-audio pipewire-alsa pipewir
 
 run_command "pacman -S --noconfirm ttf-cascadia-code-nerd ttf-cascadia-mono-nerd ttf-fira-code ttf-fira-mono ttf-fira-sans ttf-firacode-nerd ttf-iosevka-nerd ttf-iosevkaterm-nerd noto-fonts-emoji ttf-jetbrains-mono-nerd ttf-jetbrains-mono ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono" "Installing Nerd Fonts and Symbols (Recommended)" "yes" 
 
+run_command "pacman -S --noconfirm firefox" "Install nano" "yes"
+
 run_command "pacman -S --noconfirm sddm && systemctl enable sddm.service" "Install and enable SDDM (Recommended)" "yes"
 
 run_command "pacman -S --noconfirm networkmanager && systemctl enable NetworkManager.service" "Install and enable Network (Recommended)" "yes"
@@ -37,7 +39,31 @@ run_command "pacman -S --noconfirm kitty" "Install Kitty (Recommended)" "yes"
 
 run_command "pacman -S --noconfirm nano" "Install nano" "yes"
 
-run_command "pacman -S --noconfirm wofi rofi thunar python-requests pamixer pavucontrol bluez-utils blueman network-manager-applet gvfs thunar-archive-plugin file-roller btop pacman-contrib starship lxappearance xfce4-settings" "Install some other staff" "yes"
+run_command "pacman -S --noconfirm neovim" "Install nano" "yes"
+
+# Launchers and application menus
+run_command "pacman -S --noconfirm wofi rofi" "Install application launchers (wofi, rofi)" "yes"
+
+# File manager and file utilities
+run_command "pacman -S --noconfirm thunar gvfs thunar-archive-plugin file-roller" "Install file manager and archive tools (Thunar, GVFS, File Roller)" "yes"
+
+# Audio utilities
+run_command "pacman -S --noconfirm pamixer pavucontrol" "Install audio utilities (pamixer, pavucontrol)" "yes"
+
+# Bluetooth utilities
+run_command "pacman -S --noconfirm bluez-utils blueman" "Install Bluetooth tools" "yes"
+
+# Network utilities
+run_command "pacman -S --noconfirm network-manager-applet" "Install network manager applet" "yes"
+
+# System and performance tools
+run_command "pacman -S --noconfirm btop pacman-contrib" "Install system monitoring and package tools (btop, pacman-contrib)" "yes"
+
+# Appearance and theming
+run_command "pacman -S --noconfirm starship lxappearance xfce4-settings" "Install appearance and theme configuration tools" "yes"
+
+# Python utilities
+run_command "pacman -S --noconfirm python-requests" "Install Python Requests library" "yes"
 
 run_command "pacman -S --noconfirm tar unzip unrar p7zip" "Install archive extraction tools (tar, zip, rar, 7z) - needed for copying themes" "yes"
 
