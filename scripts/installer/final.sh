@@ -21,6 +21,6 @@ print_bold_blue "\nTroubleshooting:"
 echo "   - If you encounter any issues, please check the GitHub issues section."
 echo "   - Don't hesitate to open a new issue if you can't find a solution to your problem."
 
-print_success "\nEnjoy your new Hyprland environment!"
+print_success "\nEnjoy your new Hyprland environment! Reboot now for the best experience <3"
 
 echo "------------------------------------------------------------------------"
