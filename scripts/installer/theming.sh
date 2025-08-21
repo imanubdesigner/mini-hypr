@@ -19,9 +19,9 @@ run_command "tar -xvf $BASE_DIR/assets/icons/Tela-circle-dracula.tar.xz -C /usr/
 
 run_command "yay -S --sudoloop --noconfirm kvantum-theme-catppuccin-git" "Install Catppuccin theme for Kvantum" "yes" "no"
 
-run_command "mkdir -p /home/$SUDO_USER/.config/ && cp -r $BASE_DIR/configs/kitty /home/$SUDO_USER/.config/ && chown -R $SUDO_USER:$SUDO_USER /home/$SUDO_USER/.config/kitty" "Copy Kitty config folder (Catppuccin theme)" "yes" "no"
+run_command "cp -r $BASE_DIR/configs/kitty /home/$SUDO_USER/.config/ && chown -R $SUDO_USER:$SUDO_USER /home/$SUDO_USER/.config/kitty" "Copy Kitty config folder (Catppuccin theme)" "yes" "no"
 
-run_command "cp -r $BASE_DIR/assets/wallpapers /home/$SUDO_USER/ && chown -R $SUDO_USER:$SUDO_USER /home/$SUDO_USER/wallpapers && sudo -u $SUDO_USER swww init && sudo -u $SUDO_USER swww img /home/$SUDO_USER/wallpapers/wall1.png" "Copy wallpapers and set default background" "yes" "no"
+run_command "cp -r $BASE_DIR/assets/wallpapers /home/$SUDO_USER/ && chown -R $SUDO_USER:$SUDO_USER /home/$SUDO_USER/wallpapers" "Copy wallpapers and set default background" "yes" "no"
 
 
 # Add instructions to configure theming
