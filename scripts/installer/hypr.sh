@@ -23,7 +23,7 @@ run_command "pacman -S --noconfirm hyprsunset" "Install blue-filter (Night Light
 run_command "pacman -S --noconfirm hyprpolkitagent" "Install Hyprpolkitagent for authentication dialog like open external SSD" "yes"
 
 run_command "pacman -S --noconfirm dunst" "Install Dunst notification daemon" "yes"
-run_command "cp -r $BASE_DIR/configs/dunst /home/$SUDO_USER/.config/" "Copy dunst config" "yes" "no"
+run_command "mkdir -p /home/$SUDO_USER/.config/ && cp -r $BASE_DIR/configs/dunst /home/$SUDO_USER/.config/ && chown -R $SUDO_USER:$SUDO_USER /home/$SUDO_USER/.config/dunst" "Copy Dunst config" "yes" "no"
 
 run_command "pacman -S --noconfirm qt5-wayland qt6-wayland" "Install QT support on wayland" "yes"
 
