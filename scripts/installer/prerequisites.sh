@@ -21,7 +21,7 @@ run_command "pacman -S --noconfirm linux-headers nvidia-open-dkms nvidia-utils l
 
 run_command "pacman -S --noconfirm pipewire pipewire-audio pipewire-alsa pipewire-jack wireplumber pamixer" "Configuring audio (Recommended)" "yes" 
 
-run_command "pacman -S --noconfirm ttf-cascadia-code-nerd ttf-cascadia-mono-nerd ttf-fira-code ttf-fira-mono ttf-fira-sans ttf-firacode-nerd ttf-iosevka-nerd ttf-iosevkaterm-nerd ttf-jetbrains-mono-nerd ttf-jetbrains-mono ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono" "Installing Nerd Fonts and Symbols (Recommended)" "yes" 
+run_command "pacman -S --noconfirm ttf-cascadia-code-nerd ttf-cascadia-mono-nerd ttf-fira-code ttf-fira-mono ttf-fira-sans ttf-firacode-nerd ttf-iosevka-nerd ttf-iosevkaterm-nerd noto-fonts-emoji ttf-jetbrains-mono-nerd ttf-jetbrains-mono ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono" "Installing Nerd Fonts and Symbols (Recommended)" "yes" 
 
 run_command "pacman -S --noconfirm sddm && systemctl enable sddm.service" "Install and enable SDDM (Recommended)" "yes"
 
@@ -31,10 +31,14 @@ run_command "pacman -S --noconfirm wpa_supplicant && systemctl enable wpa_suppli
 
 run_command "pacman -S --noconfirm bluez && systemctl enable bluetooth.service" "Install and enable Bluetooth (Recommended)" "yes"
 
+run_command "pacman -S --noconfirm zsh zsh-completions" "Install zsh" "yes"
+
 run_command "pacman -S --noconfirm kitty" "Install Kitty (Recommended)" "yes"
 
 run_command "pacman -S --noconfirm nano" "Install nano" "yes"
 
-run_command "pacman -S --noconfirm tar" "Install tar for extracting files (Must)/needed for copying themes" "yes"
+run_command "pacman -S --noconfirm wofi rofi thunar python-requests pamixer pavucontrol bluez-utils blueman network-manager-applet gvfs thunar-archive-plugin file-roller btop pacman-contrib starship lxappearance xfce4-settings" "Install some other staff" "yes"
+
+run_command "pacman -S --noconfirm tar unzip unrar p7zip" "Install archive extraction tools (tar, zip, rar, 7z) - needed for copying themes" "yes"
 
 echo "------------------------------------------------------------------------"
