@@ -17,6 +17,8 @@ run_command "mkdir -p /home/$SUDO_USER/.themes && unzip -o $BASE_DIR/assets/them
 
 run_command "mkdir -p /home/$SUDO_USER/.icons && tar -xvf $BASE_DIR/assets/icons/Tela-circle-dracula.tar.xz -C /home/$SUDO_USER/.icons && chown -R $SUDO_USER:$SUDO_USER /home/$SUDO_USER/.icons" "Install Tela Circle Dracula icon theme in user .icons folder" "yes" "no"
 
+run_command "unzip -o $BASE_DIR/assets/hyprcursor/catppuccin-mocha-light-cursors.zip -d /home/$SUDO_USER/.icons && chown -R $SUDO_USER:$SUDO_USER /home/$SUDO_USER/.icons" "Install Catppuccin Hyprcursor" "yes" "no"
+
 run_command "yay -S --sudoloop --noconfirm kvantum-theme-catppuccin-git" "Install Catppuccin theme for Kvantum" "yes" "no"
 
 run_command "cp -r $BASE_DIR/configs/kitty /home/$SUDO_USER/.config/ && chown -R $SUDO_USER:$SUDO_USER /home/$SUDO_USER/.config/kitty" "Copy Kitty config folder (Catppuccin theme)" "yes" "no"
