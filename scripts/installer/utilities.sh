@@ -20,6 +20,12 @@ run_command "cp -r $BASE_DIR/configs/tofi /home/$SUDO_USER/.config/ && chown -R 
 # Clipboard manager
 run_command "pacman -S --noconfirm cliphist" "Install Cliphist - Clipboard Manager" "yes"
 
+# FastFetch
+run_command "pacman -S --noconfirm fastfetch" "Install fastfetch" "yes"
+
+# qView
+run_command "yay -S --sudoloop --noconfirm qview" "Install qView Image Viewer" "yes" "no"
+
 # SWWW
 run_command "yay -S --sudoloop --noconfirm swww" "Install SWWW for wallpaper management" "yes" "no"
 
