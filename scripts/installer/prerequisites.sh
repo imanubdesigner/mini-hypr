@@ -68,7 +68,7 @@ run_command "pacman -S --noconfirm wofi rofi" "Install application launchers (wo
 run_command "cp -r $BASE_DIR/configs/rofi /home/$SUDO_USER/.config/ && chown -R $SUDO_USER:$SUDO_USER /home/$SUDO_USER/.config/rofi" "Copy entire Rofi config folder (Must)" "yes" "no"
 
 # File manager and file utilities
-run_command "pacman -S --noconfirm thunar tumbler gvfs-mtp udisks2 xdg-user-dirs gvfs thunar-archive-plugin file-roller" "Install file manager and important plugin" "yes"
+run_command "pacman -S --noconfirm thunar tumbler gvfs gvfs-mtp udisks2 xdg-user-dirs thunar-archive-plugin file-roller" "Install file manager and important plugin" "yes"
 
 # System and performance tools
 run_command "pacman -S --noconfirm btop pacman-contrib" "Install btop and pacman-contrib)" "yes"
