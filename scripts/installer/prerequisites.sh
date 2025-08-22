@@ -33,12 +33,6 @@ run_command "pacman -S --noconfirm obsidian" "Install obsidian" "yes"
 # Install Neovim
 run_command "pacman -S --noconfirm neovim" "Install Neovim" "yes"
 
-# Clone LazyVim starter
-run_command "git clone https://github.com/LazyVim/starter /home/$SUDO_USER/.config/nvim" "Clone LazyVim starter for Neovim" "yes" "no"
-
-# Remove .git folder and set right perm.
-run_command "rm -rf /home/$SUDO_USER/.config/nvim/.git && chown -R $SUDO_USER:$SUDO_USER /home/$SUDO_USER/.config/nvim" "Remove git metadata and fix permissions for Neovim config" "yes" "no"
-
 run_command "pacman -S --noconfirm sddm && systemctl enable sddm.service" "Install and enable SDDM (Recommended)" "yes"
 
 run_command "pacman -S --noconfirm networkmanager && systemctl enable NetworkManager.service" "Install and enable Network (Recommended)" "yes"
@@ -61,11 +55,13 @@ run_command "pacman -S --noconfirm kitty" "Install Kitty (Recommended)" "yes"
 
 run_command "pacman -S --noconfirm imagemagick" "Install imagemagick (Recommended)" "yes"
 
+run_command "pacman -S --noconfirm starship" "Install starship (Recommended)" "yes"
+
 run_command "pacman -S --noconfirm nano" "Install nano" "yes"
 
 # Launchers and application menus
 run_command "pacman -S --noconfirm wofi rofi" "Install application launchers (wofi for wallp. changer, rofi for shutdown, reboot script)" "yes"
-run_command "cp -r $BASE_DIR/configs/rofi /home/$SUDO_USER/.config/ && chown -R $SUDO_USER:$SUDO_USER /home/$SUDO_USER/.config/rofi" "Copy entire Rofi config folder (Must)" "yes" "no"
+run_command "cp -r $BASE_DIR/configs/rofi /home/$SUDO_USER/.config/ && chown -R $SUDO_USER:$SUDO_USER /home/$SUDO_USER/.config/rofi && find /home/$SUDO_USER/.config/rofi -name '*.sh' -type f -exec chmod +x {} +" "Copy Rofi config and set permissions" "yes" "no"
 
 # File manager and file utilities
 run_command "pacman -S --noconfirm thunar tumbler gvfs gvfs-mtp udisks2 xdg-user-dirs thunar-archive-plugin file-roller" "Install file manager and important plugin" "yes"
