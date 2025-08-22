@@ -21,7 +21,6 @@ run_command "yay -S --sudoloop --noconfirm kvantum-theme-catppuccin-git" "Instal
 
 run_command "cp -r $BASE_DIR/configs/kitty /home/$SUDO_USER/.config/ && chown -R $SUDO_USER:$SUDO_USER /home/$SUDO_USER/.config/kitty" "Copy Kitty config folder (Catppuccin theme)" "yes" "no"
 
-run_command "mkdir -p /home/$SUDO_USER/Pictures/Wallpapers && cp -r $BASE_DIR/assets/wallpapers/* /home/$SUDO_USER/Pictures/Wallpapers/ && chown -R $SUDO_USER:$SUDO_USER /home/$SUDO_USER/Pictures/Wallpapers" "Copy wallpapers to ~/Pictures/Wallpapers" "yes" "no"
 
 
 # Add instructions to configure theming
