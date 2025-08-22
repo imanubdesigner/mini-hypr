@@ -33,12 +33,6 @@ run_command "pacman -S --noconfirm obsidian" "Install obsidian" "yes"
 # Install Neovim
 run_command "pacman -S --noconfirm neovim" "Install Neovim" "yes"
 
-# Clone LazyVim starter
-run_command "git clone https://github.com/LazyVim/starter /home/$SUDO_USER/.config/nvim" "Clone LazyVim starter for Neovim" "yes" "no"
-
-# Remove .git folder and set right perm.
-run_command "rm -rf /home/$SUDO_USER/.config/nvim/.git && chown -R $SUDO_USER:$SUDO_USER /home/$SUDO_USER/.config/nvim" "Remove git metadata and fix permissions for Neovim config" "yes" "no"
-
 run_command "pacman -S --noconfirm sddm && systemctl enable sddm.service" "Install and enable SDDM (Recommended)" "yes"
 
 run_command "pacman -S --noconfirm networkmanager && systemctl enable NetworkManager.service" "Install and enable Network (Recommended)" "yes"
