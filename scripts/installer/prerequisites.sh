@@ -46,6 +46,8 @@ run_command "pacman -S --noconfirm bluez && systemctl enable bluetooth.service" 
 
 run_command "pacman -S --noconfirm zsh zsh-completions" "Install zsh" "yes"
 
+run_command "pacman -S --noconfirm zoxide fzf eza" "Install userful zsh plugin" "yes"
+
 run_command "pacman -S --noconfirm kitty" "Install Kitty (Recommended)" "yes"
 
 run_command "pacman -S --noconfirm nano" "Install nano" "yes"
@@ -55,7 +57,7 @@ run_command "pacman -S --noconfirm wofi rofi" "Install application launchers (wo
 run_command "cp -r $BASE_DIR/configs/rofi /home/$SUDO_USER/.config/ && chown -R $SUDO_USER:$SUDO_USER /home/$SUDO_USER/.config/rofi" "Copy entire Rofi config folder (Must)" "yes" "no"
 
 # File manager and file utilities
-run_command "pacman -S --noconfirm thunar gvfs thunar-archive-plugin file-roller" "Install file manager and archive tools (Thunar, GVFS, File Roller)" "yes"
+run_command "pacman -S --noconfirm thunar tumbler gvfs-mtp udisks2 xdg-user-dirs gvfs thunar-archive-plugin file-roller" "Install file manager and archive tools (Thunar, GVFS, File Roller)" "yes"
 
 # Audio utilities
 run_command "pacman -S --noconfirm pamixer pavucontrol" "Install audio utilities (pamixer, pavucontrol)" "yes"
@@ -68,12 +70,6 @@ run_command "pacman -S --noconfirm network-manager-applet" "Install network mana
 
 # System and performance tools
 run_command "pacman -S --noconfirm btop pacman-contrib" "Install system monitoring and package tools (btop, pacman-contrib)" "yes"
-
-# Appearance and theming
-run_command "pacman -S --noconfirm starship lxappearance xfce4-settings" "Install appearance and theme configuration tools" "yes"
-
-# Python utilities
-run_command "pacman -S --noconfirm python-requests" "Install Python Requests library" "yes"
 
 run_command "pacman -S --noconfirm tar unzip unrar p7zip" "Install archive extraction tools (tar, zip, rar, 7z) - needed for copying themes" "yes"
 
