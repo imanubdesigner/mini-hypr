@@ -2,10 +2,10 @@
 export TERMINAL=kitty
 
 # Cursor theme sizes
-export HYPRCURSOR_THEME=Catppuccin-Cursor
+export HYPRCURSOR_THEME=catppuccin-mocha-light-cursors
 export HYPRCURSOR_SIZE=24
+export XCURSOR_THEME=catppuccin-mocha-light-cursors
 export XCURSOR_SIZE=24
-
 
 # Nvidia GPU settings
 export LIBVA_DRIVER_NAME=nvidia
